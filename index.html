@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,14 +12,20 @@
         }
     </style>
 </head>
+
 <body>
     gh page on master branch.
     <h1 class='test'>
         Test
     </h1>
     <script>
-        var test = document.getElementsByClassName('test');
-        test.className += ' blue';
+        function makeBlue() {
+            console.log('was executed');
+            var test = document.getElementsByClassName('test');
+            test[0].className += ' blue';
+        }
+        makeBlue();
     </script>
 </body>
+
 </html>
