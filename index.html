@@ -7,50 +7,57 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hello</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="vue.js"></script>
 </head>
 
 <body>
-    <section class="todoapp">
-        <header class="header">
-            <h1>todos</h1>
-            <input class="new-todo" autofocus autocomplete="off" placeholder="What needs to be done?" v-model="newTodo" @keyup.enter="addTodo">
+    <header class="body-header">
+        <div class="h-container">
+            <h1 class="h-banner">Hi! I Make Websites</h1>
+            <nav>
+                <ul>
+                    <li class="inline-styled">
+                        <a href="#">
+                        Skills
+                    </a>
+                    </li>
+                    <li class="inline-styled">
+                        <a href="#">
+                        Portfolio
+                    </a>
+                    </li>
+                    <li class="inline-styled">
+                        <a href="#">
+                        About
+                    </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <header class="main-header">
+            <h1 class="m-h-page">About</h1>
+            <p class="m-h-web-dev">Jun Bryl Gallardo
+                <img class="avatar" src="images/photo2.jpg" alt="avatar">
+            </p>
         </header>
-        <section class="main" v-show="todos.length" v-cloak>
-            <input class="toggle-all" type="checkbox" v-model="allDone">
-            <ul class="todo-list">
-                <li v-for="todo in filteredTodos" class="todo" :key="todo.id" :class="{ completed: todo.completed, editing: todo == editedTodo }">
-                    <div class="view">
-                        <input class="toggle" type="checkbox" v-model="todo.completed">
-                        <label @dblclick="editTodo(todo)">{{ todo.title }}</label>
-                        <button class="destroy" @click="removeTodo(todo)"></button>
-                    </div>
-                    <input class="edit" type="text" v-model="todo.title" v-todo-focus="todo == editedTodo" @blur="doneEdit(todo)" @keyup.enter="doneEdit(todo)"
-                        @keyup.esc="cancelEdit(todo)">
-                </li>
+        <footer>
+            <ul class="f-info">
+                <li class="inline-styled">web developer</li>
+                <li class="inline-styled">email</li>
+                <li class="inline-styled">socials</li>
+                <li class="inline-styled">sites</li>
             </ul>
-        </section>
-        <footer class="footer" v-show="todos.length" v-cloak>
-            <span class="todo-count">
-                    <strong>{{ remaining }}</strong> {{ remaining | pluralize }} left
-                  </span>
-            <ul class="filters">
-                <li><a href="#/all" :class="{ selected: visibility == 'all' }">All</a></li>
-                <li><a href="#/active" :class="{ selected: visibility == 'active' }">Active</a></li>
-                <li><a href="#/completed" :class="{ selected: visibility == 'completed' }">Completed</a></li>
-            </ul>
-            <button class="clear-completed" @click="removeCompleted" v-show="todos.length > remaining">
-                    Clear completed
-                  </button>
         </footer>
-    </section>
-    <footer class="info">
-        <p>Double-click to edit a todo</p>
-        <p>Written by <a href="http://evanyou.me">Evan You</a></p>
-        <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
-    </footer>
-
-    <script src="sample.js"></script>
+        <section>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas corrupti architecto, delectus obcaecati dolore
+                soluta.
+            </p>
+            <h2>Integrity is necessary</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum aliquid ullam cum reiciendis. Expedita animi
+                itaque consectetur fuga eligendi soluta id magni vero porro! A!</p>
+        </section>
+    </main>
 </body>
 
 </html>
